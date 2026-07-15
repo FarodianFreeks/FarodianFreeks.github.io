@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The virtual CV of Farodian Freeks, a BSc Information Technology student and aspiring software developer.">
+    <title>Farodian Freeks | Virtual CV</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="logo" href="#home" aria-label="Go to the top">FF<span>.</span></a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <button class="theme-button" id="themeButton" aria-label="Switch colour theme">☀</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span class="status-dot"></span>BSc IT student in Potchefstroom</p>
+                <h1>Hi, I’m Farodian.<br><span>I build small things to learn big things.</span></h1>
+                <p class="hero-text">
+                    I enjoy turning ideas into working programs, especially when I get to experiment,
+                    solve a problem and learn something new along the way.
+                </p>
+                <div class="hero-buttons">
+                    <a class="button primary" href="#projects">See my projects</a>
+                    <a class="button secondary" href="assets/Farodian-Freeks-CV.pdf" target="_blank" rel="noopener">Open my CV</a>
+                </div>
+            </div>
+
+            <aside class="code-card reveal" aria-label="A quick summary about Farodian">
+                <div class="code-card-top">
+                    <span></span><span></span><span></span>
+                    <p>quick-intro.js</p>
+                </div>
+                <pre><code><span class="code-purple">const</span> farodian = {
+  role: <span class="code-green">"IT student"</span>,
+  enjoys: [
+    <span class="code-green">"coding"</span>,
+    <span class="code-green">"problem solving"</span>,
+    <span class="code-green">"building pet programs"</span>
+  ],
+  currentGoal: <span class="code-green">"grow as a developer"</span>
+};</code></pre>
+            </aside>
+        </section>
+
+        <section class="section container" id="about">
+            <div class="section-heading reveal">
+                <p>01 / About</p>
+                <h2>A little about me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I am studying BSc Information Technology at North-West University. Most of my
+                        experience comes from coursework, team projects and the small programs I build
+                        when I want to test an idea.
+                    </p>
+                    <p>
+                        I like software that feels simple to use, even when a lot is happening behind
+                        the scenes. I am still learning, but I enjoy the process of figuring things out
+                        and improving a project bit by bit.
+                    </p>
+                </div>
+
+                <div class="mini-facts reveal">
+                    <div>
+                        <strong>2027</strong>
+                        <span>Expected graduation</span>
+                    </div>
+                    <div>
+                        <strong>140</strong>
+                        <span>Words per minute</span>
+                    </div>
+                    <div>
+                        <strong>3+</strong>
+                        <span>Main coding languages</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-section" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>02 / Skills</p>
+                    <h2>What I work with</h2>
+                </div>
+
+                <div class="skill-grid">
+                    <article class="skill-card reveal">
+                        <div class="skill-icon">&lt;/&gt;</div>
+                        <h3>Languages</h3>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>C#</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <div class="skill-icon">DB</div>
+                        <h3>Databases & tools</h3>
+                        <div class="tags">
+                            <span>MySQL</span>
+                            <span>SQLite</span>
+                            <span>Visual Studio</span>
+                            <span>VS Code</span>
+                            <span>IntelliJ IDEA</span>
+                            <span>Eclipse</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <div class="skill-icon">✦</div>
+                        <h3>Other strengths</h3>
+                        <div class="tags">
+                            <span>Problem solving</span>
+                            <span>Data analysis</span>
+                            <span>Teamwork</span>
+                            <span>Fast typing</span>
+                            <span>UI testing</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="projects">
+            <div class="section-heading reveal">
+                <p>03 / Projects</p>
+                <h2>Things I have built</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card featured reveal">
+                    <div class="project-number">01</div>
+                    <div>
+                        <p class="project-type">Python game</p>
+                        <h3>Snake Game</h3>
+                        <p>
+                            A retro-style snake game made with Python and Turtle. It uses keyboard input,
+                            collision detection, scoring and a continuous game loop.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span><span>Turtle</span><span>Game logic</span>
+                        </div>
+                    </div>
+                    <a class="project-link disabled" href="#" aria-disabled="true">GitHub link soon</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-number">02</div>
+                    <div>
+                        <p class="project-type">Python game</p>
+                        <h3>Ping Pong Game</h3>
+                        <p>
+                            A two-player game that helped me practise object-oriented programming,
+                            real-time movement and ball collision mechanics.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span><span>OOP</span><span>Input handling</span>
+                        </div>
+                    </div>
+                    <a class="project-link disabled" href="#" aria-disabled="true">GitHub link soon</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-number">03</div>
+                    <div>
+                        <p class="project-type">University group project</p>
+                        <h3>Course Management System</h3>
+                        <p>
+                            A full-stack academic project completed with a team. I worked on backend
+                            logic, database connections and testing parts of the user interface.
+                        </p>
+                        <div class="tags">
+                            <span>Team project</span><span>Database</span><span>Backend</span>
+                        </div>
+                    </div>
+                    <a class="project-link disabled" href="#" aria-disabled="true">GitHub link soon</a>
+                </article>
+
+                <article class="project-card playful reveal">
+                    <div class="project-number">04</div>
+                    <div>
+                        <p class="project-type">Experiments</p>
+                        <h3>Pet Programs</h3>
+                        <p>
+                            A growing collection of small projects including a calculator, password
+                            generator, offline login system and a C# number guessing game.
+                        </p>
+                        <div class="tags">
+                            <span>Practice</span><span>Automation</span><span>Learning</span>
+                        </div>
+                    </div>
+                    <a class="project-link disabled" href="#" aria-disabled="true">GitHub link soon</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section soft-section" id="journey">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>04 / Journey</p>
+                    <h2>Where I am now</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Current</div>
+                        <div class="timeline-content">
+                            <h3>BSc Information Technology</h3>
+                            <p>North-West University</p>
+                            <p>
+                                Learning through modules such as software engineering, databases,
+                                data structures and object-oriented programming.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Next</div>
+                        <div class="timeline-content">
+                            <h3>Keep building and improving</h3>
+                            <p>
+                                My goal is to grow my project portfolio, strengthen my Python and software
+                                development skills, and gain practical industry experience.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container contact-section" id="contact">
+            <div class="contact-card reveal">
+                <p class="eyebrow">Let’s connect</p>
+                <h2>Have a project, opportunity or useful idea?</h2>
+                <p>I am always open to learning from people and trying something new.</p>
+                <div class="contact-actions">
+                    <a class="button primary" href="mailto:farodian1811@gmail.com">Email me</a>
+                    <button class="button secondary" id="copyEmail" type="button">Copy email</button>
+                </div>
+                <p class="copy-message" id="copyMessage" aria-live="polite"></p>
+
+                <!-- Replace the # links below with your real GitHub and LinkedIn links. -->
+                <div class="social-links">
+                    <a href="#" class="disabled" aria-disabled="true">GitHub link coming</a>
+                    <a href="#" class="disabled" aria-disabled="true">LinkedIn link coming</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>Built by Farodian Freeks <span id="currentYear"></span>.</p>
+            <a href="#home">Back to the top ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
