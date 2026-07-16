@@ -1780,3 +1780,530 @@ footer {
         display: none;
     }
 }
+
+/* ==================================================
+   SMALL PERSONAL SECTION
+   ================================================== */
+
+.personal-section {
+    padding-top: 90px;
+}
+
+.personal-card {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(30px, 5vw, 64px);
+    align-items: start;
+
+    padding: clamp(28px, 5vw, 52px);
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--line) 72%,
+            rgba(255, 255, 255, 0.55)
+        );
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--surface) 80%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--accent-soft) 30%,
+                var(--surface)
+            )
+        );
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(145%);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(145%);
+
+    box-shadow: var(--card-shadow);
+}
+
+.personal-card::before {
+    content: "";
+    position: absolute;
+    top: -110px;
+    right: -80px;
+    z-index: -1;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(--highlight) 38%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--accent) 16%,
+                transparent
+            ) 45%,
+            transparent 72%
+        );
+
+    filter: blur(16px);
+}
+
+.personal-intro {
+    max-width: 430px;
+}
+
+.personal-kicker {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.personal-intro > p:last-child {
+    color: var(--muted);
+    font-size: 1.04rem;
+}
+
+.personal-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.personal-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: start;
+
+    padding: 18px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--line) 72%,
+            transparent
+        );
+
+    border-radius: 17px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 52%,
+            transparent
+        );
+
+    transition:
+        transform 0.24s ease,
+        border-color 0.24s ease,
+        background 0.24s ease,
+        box-shadow 0.24s ease;
+}
+
+.personal-item:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 48%,
+            var(--line)
+        );
+
+    background:
+        color-mix(
+            in srgb,
+            var(--accent-soft) 22%,
+            var(--surface)
+        );
+
+    box-shadow:
+        0 12px 26px
+        rgba(132, 88, 179, 0.12);
+}
+
+.personal-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 35%,
+            transparent
+        );
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--accent-soft) 74%,
+                var(--surface)
+            ),
+            color-mix(
+                in srgb,
+                var(--highlight) 36%,
+                var(--surface)
+            )
+        );
+
+    color: var(--accent-dark);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.personal-item h3 {
+    margin-bottom: 5px;
+    font-size: 1.03rem;
+}
+
+.personal-item p {
+    color: var(--muted);
+    font-size: 0.91rem;
+    line-height: 1.55;
+}
+
+body.dark .personal-card {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--surface) 84%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--accent-soft) 18%,
+                var(--surface)
+            )
+        );
+}
+
+body.dark .personal-item {
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 42%,
+            transparent
+        );
+}
+
+@media (max-width: 800px) {
+    .personal-card {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-intro {
+        max-width: 620px;
+    }
+}
+
+@media (max-width: 520px) {
+    .personal-card {
+        padding: 22px;
+    }
+
+    .personal-item {
+        grid-template-columns: 42px 1fr;
+        padding: 16px;
+    }
+
+    .personal-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+    }
+}
+
+/* ==================================================
+   AI-FOCUSED CURRENTLY LEARNING SECTION
+   ================================================== */
+
+.learning-section {
+    position: relative;
+}
+
+.learning-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-top: -18px;
+    margin-bottom: 28px;
+    padding: 18px 20px;
+
+    border: 1px solid var(--line);
+    border-radius: 17px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--surface) 82%,
+            transparent
+        );
+
+    -webkit-backdrop-filter:
+        blur(14px)
+        saturate(135%);
+
+    backdrop-filter:
+        blur(14px)
+        saturate(135%);
+}
+
+.learning-intro p {
+    max-width: 720px;
+    color: var(--muted);
+}
+
+.learning-status {
+    flex: 0 0 auto;
+
+    padding: 7px 11px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 42%,
+            var(--line)
+        );
+
+    border-radius: 999px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--accent-soft) 44%,
+            var(--surface)
+        );
+
+    color: var(--accent-dark);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.learning-card {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+
+    padding: 23px;
+
+    border: 1px solid var(--line);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            color-mix(
+                in srgb,
+                var(--surface) 88%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--accent-soft) 15%,
+                var(--surface)
+            )
+        );
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(140%);
+
+    backdrop-filter:
+        blur(16px)
+        saturate(140%);
+
+    box-shadow: var(--card-shadow);
+
+    transition:
+        transform 0.26s ease,
+        border-color 0.26s ease,
+        box-shadow 0.26s ease;
+}
+
+.learning-card::before {
+    content: "";
+    position: absolute;
+    right: -70px;
+    bottom: -90px;
+    z-index: -1;
+
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(--highlight) 28%,
+                transparent
+            ),
+            color-mix(
+                in srgb,
+                var(--accent) 12%,
+                transparent
+            ) 46%,
+            transparent 72%
+        );
+
+    filter: blur(13px);
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 52%,
+            var(--line)
+        );
+
+    box-shadow:
+        0 18px 38px
+        rgba(132, 88, 179, 0.16);
+}
+
+.learning-number {
+    color: var(--muted);
+    font: 0.78rem ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.learning-label {
+    margin-bottom: 7px;
+    color: var(--accent);
+    font-size: 0.73rem;
+    font-weight: 850;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.learning-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.22rem;
+    line-height: 1.18;
+}
+
+.learning-card-content > p:last-child {
+    color: var(--muted);
+    font-size: 0.91rem;
+    line-height: 1.58;
+}
+
+.featured-learning {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 52%,
+            var(--line)
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            color-mix(
+                in srgb,
+                var(--accent) 83%,
+                var(--dusty-purple)
+            ),
+            color-mix(
+                in srgb,
+                var(--accent-dark) 88%,
+                var(--highlight)
+            )
+        );
+
+    color: var(--on-accent);
+}
+
+.featured-learning .learning-number,
+.featured-learning .learning-label,
+.featured-learning .learning-card-content > p:last-child {
+    color:
+        color-mix(
+            in srgb,
+            var(--on-accent) 82%,
+            transparent
+        );
+}
+
+.featured-learning::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.23),
+            rgba(160, 210, 235, 0.16) 38%,
+            transparent 70%
+        );
+}
+
+body.dark .learning-status {
+    color: var(--text);
+}
+
+@media (max-width: 950px) {
+    .learning-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .learning-intro {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-card {
+        min-height: 220px;
+    }
+}
