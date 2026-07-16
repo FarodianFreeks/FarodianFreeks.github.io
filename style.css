@@ -1,28 +1,91 @@
 :root {
-    --background: #f7f7fb;
-    --surface: #ffffff;
-    --soft: #efeff8;
-    --text: #1d1d2b;
-    --muted: #656579;
-    --line: #dddded;
-    --accent: #7157d9;
-    --accent-dark: #5840bb;
-    --accent-soft: #e9e4ff;
-    --shadow: 0 18px 50px rgba(37, 31, 74, 0.10);
+    --background: #e5eaf5;
+    --surface: #f8f7fc;
+    --soft: #dae4f3;
+
+    /* Text colours */
+    --text: #2f2537;
+    --muted: #695d70;
+
+    /* Borders */
+    --line: #c8bdd8;
+
+    /* Main purple colours */
+    --accent: #8458b3;
+    --accent-dark: #6c4495;
+    --accent-soft: #d0bdf4;
+
+    /* Additional palette colours */
+    --highlight: #a0d2eb;
+    --dusty-purple: #a28089;
+
+    /* Text displayed on purple backgrounds */
+    --on-accent: #ffffff;
+
+    /* Code card colours */
+    --code-background: #211829;
+    --code-header: #302239;
+    --code-border: #4b3855;
+    --code-text: #e5eaf5;
+    --code-muted: #a28089;
+    --code-keyword: #d0bdf4;
+    --code-string: #a0d2eb;
+
+    /* Contact card colours */
+    --contact-background: #2a1f33;
+    --contact-muted: #d8cedf;
+    --contact-line: #52405e;
+    --contact-button: #3b2c46;
+
+    /* Shadows and shape */
+    --shadow: 0 18px 50px rgba(132, 88, 179, 0.16);
+    --card-shadow: 0 12px 30px rgba(132, 88, 179, 0.10);
     --radius: 22px;
 }
 
 body.dark {
-    --background: #111119;
-    --surface: #1a1a25;
-    --soft: #151520;
-    --text: #f5f4ff;
-    --muted: #aaa8ba;
-    --line: #303042;
-    --accent: #9b88ff;
-    --accent-dark: #b2a3ff;
-    --accent-soft: #2b2646;
-    --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+   /* Main page colours */
+    --background: #15101c;
+    --surface: #211827;
+    --soft: #2b2033;
+
+    /* Text colours */
+    --text: #f3eef8;
+    --muted: #c4b8c9;
+
+    /* Borders */
+    --line: #493952;
+
+    /* Main purple colours */
+    --accent: #d0bdf4;
+    --accent-dark: #a0d2eb;
+    --accent-soft: #3b2949;
+
+    /* Additional palette colours */
+    --highlight: #a0d2eb;
+    --dusty-purple: #a28089;
+
+    /* Dark text displayed on the lighter accent */
+    --on-accent: #211629;
+
+    /* Code card colours */
+    --code-background: #0f0b14;
+    --code-header: #191120;
+    --code-border: #392a43;
+    --code-text: #e5eaf5;
+    --code-muted: #a28089;
+    --code-keyword: #d0bdf4;
+    --code-string: #a0d2eb;
+
+    /* Contact card colours */
+    --contact-background: #0f0b14;
+    --contact-muted: #c4b8c9;
+    --contact-line: #392a43;
+    --contact-button: #251a2d;
+
+    /* Shadows */
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+    --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
 }
 
 * {
@@ -191,7 +254,8 @@ button {
 .contact-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    column-gap: 36px;
+    row-gap: 26px;
     margin-top: 32px;
 }
 
@@ -719,5 +783,859 @@ footer {
     .footer-content {
         align-items: flex-start;
         flex-direction: column;
+    }
+}
+
+/* ==================================================
+   PURPLE 90s COMPONENT COLOURS
+   ================================================== */
+
+/* Theme and mobile menu buttons */
+
+.theme-button,
+.menu-button {
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-button:hover,
+.menu-button:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+
+/* Small status circle in the introduction */
+
+.status-dot {
+    background: var(--highlight);
+    box-shadow:
+        0 0 0 6px
+        color-mix(in srgb, var(--highlight) 24%, transparent);
+}
+
+
+/* Main buttons */
+
+.button.primary {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.button.primary:hover {
+    background: var(--accent-dark);
+}
+
+.button.secondary:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--text);
+}
+
+
+/* Introduction code card */
+
+.code-card {
+    background: var(--code-background);
+    color: var(--code-text);
+    border-color: var(--code-border);
+}
+
+.code-card-top {
+    background: var(--code-header);
+    border-bottom-color: var(--code-border);
+}
+
+.code-card-top span {
+    background: var(--dusty-purple);
+}
+
+.code-card-top span:first-child {
+    background: var(--accent);
+}
+
+.code-card-top span:nth-child(2) {
+    background: var(--highlight);
+}
+
+.code-card-top span:nth-child(3) {
+    background: var(--accent-soft);
+}
+
+.code-card-top p {
+    color: var(--code-muted);
+}
+
+.code-purple {
+    color: var(--code-keyword);
+}
+
+.code-green {
+    color: var(--code-string);
+}
+
+
+/* Skill and project cards */
+
+.skill-card,
+.project-card {
+    box-shadow: var(--card-shadow);
+}
+
+.skill-icon {
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-soft),
+            color-mix(in srgb, var(--highlight) 45%, var(--accent-soft))
+        );
+    color: var(--accent-dark);
+}
+
+.tags span {
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tags span:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+
+/* Featured project card */
+
+.project-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            var(--accent),
+            color-mix(
+                in srgb,
+                var(--accent) 72%,
+                var(--dusty-purple)
+            )
+        );
+    color: var(--on-accent);
+}
+
+.project-card.featured .project-number {
+    color:
+        color-mix(
+            in srgb,
+            var(--on-accent) 65%,
+            transparent
+        );
+}
+
+.project-card.featured .project-type,
+.project-card.featured p,
+.project-card.featured .project-link {
+    color:
+        color-mix(
+            in srgb,
+            var(--on-accent) 84%,
+            transparent
+        );
+}
+
+.project-card.featured .tags span {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--on-accent) 28%,
+            transparent
+        );
+
+    background:
+        color-mix(
+            in srgb,
+            var(--on-accent) 12%,
+            transparent
+        );
+
+    color: var(--on-accent);
+}
+
+.project-card.featured .tags span:hover {
+    background:
+        color-mix(
+            in srgb,
+            var(--on-accent) 22%,
+            transparent
+        );
+}
+
+
+/* Pet Programs card */
+
+.project-card.playful {
+    background-image:
+        radial-gradient(
+            circle at 90% 10%,
+            color-mix(
+                in srgb,
+                var(--highlight) 48%,
+                transparent
+            ),
+            transparent 35%
+        );
+}
+
+
+/* Timeline */
+
+.timeline-dot {
+    background: var(--highlight);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+
+/* Contact section */
+
+.contact-card {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            color-mix(
+                in srgb,
+                var(--accent) 30%,
+                transparent
+            ),
+            transparent 36%
+        ),
+        var(--contact-background);
+
+    color: var(--code-text);
+}
+
+.contact-card .eyebrow {
+    color: var(--highlight);
+}
+
+.contact-card > p:not(.eyebrow):not(.copy-message) {
+    color: var(--contact-muted);
+}
+
+.contact-card .button.secondary {
+    border-color: var(--contact-line);
+    background: var(--contact-button);
+    color: var(--code-text);
+}
+
+.contact-card .button.secondary:hover {
+    border-color: var(--highlight);
+    background:
+        color-mix(
+            in srgb,
+            var(--contact-button) 75%,
+            var(--accent)
+        );
+}
+
+.copy-message {
+    color: var(--highlight);
+}
+
+.social-links {
+    border-top-color: var(--contact-line);
+    color: var(--contact-muted);
+}
+
+.social-links a:hover {
+    color: var(--highlight);
+}
+
+/* ==================================================
+   PURPLE-IRIDESCENT LIQUID GLASS BUTTONS
+   All button variants begin with the same glass colour.
+   Pointer variables are supplied by liquid-buttons.js.
+   ================================================== */
+
+:root {
+    --glass-button-fill:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.72),
+            rgba(242, 238, 249, 0.55)
+        );
+
+    --glass-button-text: #2f2537;
+    --glass-button-border: rgba(255, 255, 255, 0.86);
+    --glass-button-edge: rgba(132, 88, 179, 0.20);
+
+    --glass-button-shadow:
+        0 8px 22px rgba(44, 31, 61, 0.11),
+        0 2px 7px rgba(132, 88, 179, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.96),
+        inset 0 -1px 0 rgba(132, 88, 179, 0.08);
+
+    --glass-button-hover-shadow:
+        0 24px 52px rgba(64, 38, 86, 0.24),
+        0 9px 26px rgba(132, 88, 179, 0.22),
+        0 3px 12px rgba(160, 210, 235, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92),
+        inset 0 -1px 0 rgba(132, 88, 179, 0.14);
+}
+
+body.dark {
+    --glass-button-fill:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.20),
+            rgba(208, 189, 244, 0.12)
+        );
+
+    --glass-button-text: #f3eef8;
+    --glass-button-border: rgba(255, 255, 255, 0.30);
+    --glass-button-edge: rgba(208, 189, 244, 0.22);
+
+    --glass-button-shadow:
+        0 9px 25px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -1px 0 rgba(160, 210, 235, 0.07);
+
+    --glass-button-hover-shadow:
+        0 25px 54px rgba(0, 0, 0, 0.38),
+        0 10px 28px rgba(132, 88, 179, 0.24),
+        0 3px 14px rgba(160, 210, 235, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.30),
+        inset 0 -1px 0 rgba(160, 210, 235, 0.11);
+}
+
+
+/* Every button starts with exactly the same resting colour and material */
+
+.button,
+.button.primary,
+.button.secondary,
+.contact-card .button.primary,
+.contact-card .button.secondary {
+    --liquid-shift-x: 0px;
+    --liquid-shift-y: 0px;
+    --liquid-rotate-x: 0deg;
+    --liquid-rotate-y: 0deg;
+    --liquid-light-x: 50%;
+    --liquid-light-y: 50%;
+
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate;
+
+    min-height: 48px;
+    padding: 0 22px;
+
+    border: 1px solid var(--glass-button-border);
+    border-radius: 15px;
+
+    background: var(--glass-button-fill);
+    color: var(--glass-button-text);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(170%);
+
+    backdrop-filter:
+        blur(20px)
+        saturate(170%);
+
+    box-shadow:
+        var(--glass-button-shadow),
+        0 0 0 1px var(--glass-button-edge);
+
+    transform-origin: center;
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    transition:
+        transform 0.20s ease-out,
+        border-radius 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.32s ease,
+        background 0.32s ease,
+        box-shadow 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+        color 0.32s ease;
+}
+
+
+/* Transparent purple-rainbow refraction beneath the glass */
+
+.button::before {
+    content: "";
+    position: absolute;
+    inset: -38%;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at var(--liquid-light-x) var(--liquid-light-y),
+            rgba(255, 255, 255, 0.68) 0 6%,
+            rgba(255, 255, 255, 0.10) 22%,
+            transparent 42%
+        ),
+        conic-gradient(
+            from 205deg at 50% 50%,
+            rgba(108, 68, 149, 0.76),
+            rgba(132, 88, 179, 0.70),
+            rgba(208, 189, 244, 0.62),
+            rgba(160, 210, 235, 0.54),
+            rgba(235, 157, 214, 0.48),
+            rgba(246, 190, 154, 0.28),
+            rgba(132, 88, 179, 0.72),
+            rgba(108, 68, 149, 0.76)
+        );
+
+    filter:
+        blur(10px)
+        saturate(130%);
+
+    opacity: 0;
+
+    transform:
+        translate3d(-12%, 3%, 0)
+        rotate(-7deg)
+        scale(0.90);
+
+    transition:
+        opacity 0.34s ease,
+        transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Clean glass rim and reflected highlight */
+
+.button::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+
+    border-radius: inherit;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at var(--liquid-light-x) var(--liquid-light-y),
+            rgba(255, 255, 255, 0.72) 0 3%,
+            rgba(255, 255, 255, 0.20) 15%,
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.68) 0%,
+            rgba(255, 255, 255, 0.10) 24%,
+            transparent 52%,
+            rgba(208, 189, 244, 0.12) 76%,
+            rgba(255, 255, 255, 0.28) 100%
+        );
+
+    opacity: 0.46;
+
+    transition:
+        opacity 0.30s ease,
+        transform 0.20s ease-out;
+}
+
+
+/* Larger hover with gentle pointer-follow movement */
+
+.button:hover,
+.button:focus-visible {
+    z-index: 4;
+
+    transform:
+        perspective(700px)
+        translate3d(
+            var(--liquid-shift-x),
+            calc(-5px + var(--liquid-shift-y)),
+            0
+        )
+        rotateX(var(--liquid-rotate-x))
+        rotateY(var(--liquid-rotate-y))
+        scale(1.15);
+
+    border-radius: 22px;
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 48%,
+            rgba(255, 255, 255, 0.72)
+        );
+
+    box-shadow:
+        var(--glass-button-hover-shadow),
+        0 0 0 1px
+        color-mix(
+            in srgb,
+            var(--highlight) 20%,
+            transparent
+        );
+}
+
+.button:hover::before,
+.button:focus-visible::before {
+    opacity: 0.84;
+
+    transform:
+        translate3d(8%, -2%, 0)
+        rotate(5deg)
+        scale(1.08);
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+    opacity: 0.78;
+
+    transform:
+        translate3d(
+            calc(var(--liquid-shift-x) * -0.35),
+            calc(var(--liquid-shift-y) * -0.35),
+            0
+        );
+}
+
+
+/* Pressed state gently compresses the glass */
+
+.button:active {
+    transform:
+        perspective(700px)
+        translate3d(
+            calc(var(--liquid-shift-x) * 0.45),
+            -2px,
+            0
+        )
+        rotateX(calc(var(--liquid-rotate-x) * 0.45))
+        rotateY(calc(var(--liquid-rotate-y) * 0.45))
+        scale(1.07);
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 12px 27px rgba(64, 38, 86, 0.18),
+        inset 0 2px 5px rgba(132, 88, 179, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+
+/* Disabled buttons keep their appearance but do not move */
+
+.button.disabled,
+.button:disabled {
+    opacity: 0.56;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--glass-button-shadow);
+}
+
+.button.disabled::before,
+.button.disabled::after,
+.button:disabled::before,
+.button:disabled::after {
+    display: none;
+}
+
+
+/* Slightly reduce enlargement on narrow screens */
+
+@media (max-width: 700px) {
+    .hero-buttons,
+    .contact-actions {
+        column-gap: 26px;
+        row-gap: 24px;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+        transform:
+            perspective(700px)
+            translate3d(
+                var(--liquid-shift-x),
+                calc(-4px + var(--liquid-shift-y)),
+                0
+            )
+            rotateX(var(--liquid-rotate-x))
+            rotateY(var(--liquid-rotate-y))
+            scale(1.10);
+    }
+}
+
+
+/* Accessibility: reduce transparency when requested */
+
+@media (prefers-reduced-transparency: reduce) {
+    .button,
+    .button.primary,
+    .button.secondary,
+    .contact-card .button.primary,
+    .contact-card .button.secondary {
+        background: var(--surface);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+}
+
+
+/* Accessibility: remove fluid motion when requested */
+
+@media (prefers-reduced-motion: reduce) {
+    .button,
+    .button::before,
+    .button::after {
+        transition: none;
+    }
+
+    .button:hover,
+    .button:focus-visible,
+    .button:active {
+        transform: none;
+    }
+}
+
+/* ==================================================
+   SLOW LIGHT / DARK MODE LOOP TRANSITION
+   This changes only the theme-switch animation.
+   ================================================== */
+
+:root {
+    --theme-loop-x: 50vw;
+    --theme-loop-y: 38px;
+    --theme-transition-speed: 1.55s;
+}
+
+
+/* Slower page colour transition */
+
+body {
+    transition:
+        background-color var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1),
+        color var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Smooth the main surfaces while the theme is changing */
+
+body.theme-transitioning .site-header,
+body.theme-transitioning .nav-links,
+body.theme-transitioning .theme-button,
+body.theme-transitioning .menu-button,
+body.theme-transitioning .soft-section,
+body.theme-transitioning .mini-facts div,
+body.theme-transitioning .skill-card,
+body.theme-transitioning .project-card,
+body.theme-transitioning .tags span,
+body.theme-transitioning .code-card,
+body.theme-transitioning .code-card-top,
+body.theme-transitioning .contact-card,
+body.theme-transitioning .button,
+body.theme-transitioning footer {
+    transition:
+        background-color var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1),
+        color var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1),
+        border-color var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow var(--theme-transition-speed)
+            cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Two expanding circular loops begin at the theme button */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    left: var(--theme-loop-x);
+    top: var(--theme-loop-y);
+    z-index: 9999;
+
+    width: 8vmax;
+    height: 8vmax;
+
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.08);
+}
+
+body::before {
+    border: 2px solid rgba(208, 189, 244, 0.72);
+
+    box-shadow:
+        0 0 0 10px rgba(132, 88, 179, 0.08),
+        0 0 36px rgba(132, 88, 179, 0.30),
+        inset 0 0 24px rgba(160, 210, 235, 0.18);
+}
+
+body::after {
+    border: 1px solid rgba(160, 210, 235, 0.56);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.08) 0 34%,
+            rgba(208, 189, 244, 0.13) 48%,
+            rgba(132, 88, 179, 0.09) 60%,
+            transparent 72%
+        );
+
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+
+/* Trigger the two loop passes */
+
+body.theme-loop-active::before {
+    animation:
+        theme-loop-primary
+        var(--theme-transition-speed)
+        cubic-bezier(0.16, 1, 0.3, 1)
+        both;
+}
+
+body.theme-loop-active::after {
+    animation:
+        theme-loop-secondary
+        var(--theme-transition-speed)
+        0.12s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        both;
+}
+
+
+/* The sun/moon icon performs one slow circular loop */
+
+.theme-button.theme-looping {
+    animation:
+        theme-icon-loop
+        var(--theme-transition-speed)
+        cubic-bezier(0.16, 1, 0.3, 1)
+        both;
+}
+
+
+@keyframes theme-loop-primary {
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.08);
+    }
+
+    16% {
+        opacity: 0.78;
+    }
+
+    58% {
+        opacity: 0.40;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(24);
+    }
+}
+
+
+@keyframes theme-loop-secondary {
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.05)
+            rotate(0deg);
+    }
+
+    22% {
+        opacity: 0.48;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(20)
+            rotate(180deg);
+    }
+}
+
+
+@keyframes theme-icon-loop {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+    }
+
+    30% {
+        transform:
+            translateY(-2px)
+            rotate(160deg)
+            scale(1.10);
+    }
+
+    62% {
+        transform:
+            translateY(-1px)
+            rotate(360deg)
+            scale(0.96);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(540deg)
+            scale(1);
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body.theme-transitioning .site-header,
+    body.theme-transitioning .nav-links,
+    body.theme-transitioning .theme-button,
+    body.theme-transitioning .menu-button,
+    body.theme-transitioning .soft-section,
+    body.theme-transitioning .mini-facts div,
+    body.theme-transitioning .skill-card,
+    body.theme-transitioning .project-card,
+    body.theme-transitioning .tags span,
+    body.theme-transitioning .code-card,
+    body.theme-transitioning .code-card-top,
+    body.theme-transitioning .contact-card,
+    body.theme-transitioning .button,
+    body.theme-transitioning footer {
+        transition-duration: 0.01ms !important;
+    }
+
+    body::before,
+    body::after,
+    .theme-button.theme-looping {
+        animation: none !important;
     }
 }
