@@ -1639,3 +1639,144 @@ body.theme-loop-active::after {
         animation: none !important;
     }
 }
+
+/* ==================================================
+   SUBTLE INSTANT CURSOR-FOLLOWING AMBIENT LIGHT
+   The glow follows the pointer exactly with no delay.
+   ================================================== */
+
+.cursor-light-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+
+    /*
+       A quieter violet-blue gradient for light mode.
+       It remains visible without overpowering the page.
+    */
+    background:
+        radial-gradient(
+            circle,
+            rgba(108, 68, 149, 0.27) 0%,
+            rgba(132, 88, 179, 0.22) 20%,
+            rgba(111, 145, 207, 0.17) 40%,
+            rgba(160, 210, 235, 0.10) 58%,
+            rgba(108, 68, 149, 0.04) 69%,
+            transparent 79%
+        );
+
+    filter:
+        blur(17px)
+        saturate(112%);
+
+    mix-blend-mode: multiply;
+
+    transform:
+        translate3d(-400px, -400px, 0);
+
+    will-change:
+        transform,
+        opacity;
+
+    /*
+       Transform has no transition, so the glow remains
+       locked directly to the mouse position.
+    */
+    transition:
+        opacity 0.16s ease,
+        filter 0.16s ease;
+}
+
+.cursor-light-gradient.visible {
+    opacity: 0.50;
+}
+
+
+/*
+   The cursor light becomes quieter over buttons so it
+   does not compete with the Liquid Glass button effect.
+*/
+
+.cursor-light-gradient.over-button {
+    opacity: 0.25;
+
+    filter:
+        blur(20px)
+        saturate(100%);
+}
+
+
+/* Dark mode uses a soft luminous version */
+
+body.dark .cursor-light-gradient {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.20) 0%,
+            rgba(208, 189, 244, 0.30) 20%,
+            rgba(160, 210, 235, 0.19) 40%,
+            rgba(132, 88, 179, 0.11) 59%,
+            transparent 78%
+        );
+
+    filter:
+        blur(17px)
+        saturate(112%);
+
+    mix-blend-mode: screen;
+}
+
+body.dark .cursor-light-gradient.visible {
+    opacity: 0.54;
+}
+
+body.dark .cursor-light-gradient.over-button {
+    opacity: 0.29;
+
+    filter:
+        blur(20px)
+        saturate(100%);
+}
+
+
+/* Keep important controls and cards above the ambient glow */
+
+.site-header,
+.nav-links,
+.theme-button,
+.menu-button,
+.button,
+.code-card,
+.skill-card,
+.project-card,
+.contact-card,
+footer {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Cursor lighting is unnecessary on touch devices */
+
+@media (hover: none), (pointer: coarse) {
+    .cursor-light-gradient {
+        display: none;
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-light-gradient {
+        display: none;
+    }
+}

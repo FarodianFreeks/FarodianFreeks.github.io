@@ -207,6 +207,84 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==================================================
+       INSTANT CURSOR-FOLLOWING AMBIENT LIGHT
+       ================================================== */
+
+    const supportsFinePointer = window.matchMedia(
+        "(hover: hover) and (pointer: fine)"
+    ).matches;
+
+    const reduceCursorMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (supportsFinePointer && !reduceCursorMotion) {
+        const cursorLight = document.createElement("div");
+
+        cursorLight.className = "cursor-light-gradient";
+        cursorLight.setAttribute("aria-hidden", "true");
+        document.body.appendChild(cursorLight);
+
+        const glowRadius = 135;
+        let hasMoved = false;
+
+        /*
+           There is no easing, interpolation, timeout, or animation frame.
+           The glow is placed directly at the current pointer coordinates.
+        */
+        document.addEventListener("pointermove", (event) => {
+            if (event.pointerType && event.pointerType !== "mouse") {
+                return;
+            }
+
+            cursorLight.style.transform =
+                `translate3d(` +
+                `${event.clientX - glowRadius}px, ` +
+                `${event.clientY - glowRadius}px, 0)`;
+
+            if (!hasMoved) {
+                hasMoved = true;
+                cursorLight.classList.add("visible");
+            }
+        });
+
+        document.addEventListener("pointerover", (event) => {
+            const buttonElement = event.target.closest(
+                "button, .button"
+            );
+
+            cursorLight.classList.toggle(
+                "over-button",
+                Boolean(buttonElement)
+            );
+        });
+
+        document.addEventListener("pointerout", (event) => {
+            const nextButtonElement = event.relatedTarget?.closest?.(
+                "button, .button"
+            );
+
+            if (!nextButtonElement) {
+                cursorLight.classList.remove("over-button");
+            }
+        });
+
+        document.documentElement.addEventListener("mouseleave", () => {
+            cursorLight.classList.remove("visible", "over-button");
+        });
+
+        document.documentElement.addEventListener("mouseenter", () => {
+            if (hasMoved) {
+                cursorLight.classList.add("visible");
+            }
+        });
+
+        window.addEventListener("blur", () => {
+            cursorLight.classList.remove("visible", "over-button");
+        });
+    }
+
+    /* ==================================================
        LIQUID-GLASS BUTTON POINTER MOVEMENT
        ================================================== */
 
