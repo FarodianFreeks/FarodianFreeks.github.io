@@ -991,10 +991,6 @@ footer {
     }
 }
 
-/* ==================================================
-   PURPLE 90s COMPONENT COLOURS
-   ================================================== */
-
 /* Theme and mobile menu buttons */
 
 .theme-button,
@@ -1261,11 +1257,11 @@ footer {
     color: var(--highlight);
 }
 
-/* ==================================================
+/* 
    PURPLE-IRIDESCENT LIQUID GLASS BUTTONS
    All button variants begin with the same glass colour.
    Pointer variables are supplied by liquid-buttons.js.
-   ================================================== */
+   */
 
 :root {
     --glass-button-fill:
@@ -1319,7 +1315,6 @@ body.dark {
 }
 
 
-/* Every button starts with exactly the same resting colour and material */
 
 .button,
 .button.primary,
@@ -1417,7 +1412,7 @@ body.dark {
 }
 
 
-/* Clean glass rim and reflected highlight */
+/* glass rim and reflected highlight */
 
 .button::after {
     content: "";
@@ -1608,10 +1603,10 @@ body.dark {
     }
 }
 
-/* ==================================================
+/* 
    SLOW LIGHT / DARK MODE LOOP TRANSITION
    This changes only the theme-switch animation.
-   ================================================== */
+  */
 
 :root {
     --theme-loop-x: 50vw;
@@ -1845,10 +1840,10 @@ body.theme-loop-active::after {
     }
 }
 
-/* ==================================================
+/* 
    SUBTLE INSTANT CURSOR-FOLLOWING AMBIENT LIGHT
    The glow follows the pointer exactly with no delay.
-   ================================================== */
+    */
 
 .cursor-light-gradient {
     position: fixed;
@@ -1986,9 +1981,9 @@ footer {
     }
 }
 
-/* ==================================================
+/* 
    SMALL PERSONAL SECTION
-   ================================================== */
+   */
 
 .personal-section {
     padding-top: 90px;
@@ -2247,9 +2242,9 @@ body.dark .personal-item {
     }
 }
 
-/* ==================================================
+/* 
    AI-FOCUSED CURRENTLY LEARNING SECTION
-   ================================================== */
+    */
 
 .learning-section {
     position: relative;
@@ -2513,9 +2508,9 @@ body.dark .learning-status {
     }
 }
 
-/* ==================================================
+/* 
    RESPONSIVE NAVBAR LOGO LOCKUP
-   ================================================== */
+    */
 
 @media (max-width: 1040px) {
     .nav {
