@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const copyMessage = document.getElementById("copyMessage");
     const currentYear = document.getElementById("currentYear");
 
-    /* ==================================================
+    /* 
        THEME
-       ================================================== */
+       
+     */
 
     const savedTheme = localStorage.getItem("farodian-theme");
     const prefersDark = window.matchMedia(
@@ -115,9 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==================================================
+    /* 
        MOBILE NAVIGATION
-       ================================================== */
+       */
 
     if (menuButton && navLinks) {
         menuButton.addEventListener("click", () => {
