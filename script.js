@@ -138,9 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==================================================
+    /* 
        DISABLED LINKS
-       ================================================== */
+        */
 
     document.querySelectorAll("a.disabled").forEach((link) => {
         link.addEventListener("click", (event) => {
@@ -148,9 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ==================================================
+    /* 
        COPY EMAIL
-       ================================================== */
+        */
 
     if (copyEmailButton && copyMessage) {
         copyEmailButton.addEventListener("click", async () => {
@@ -169,17 +169,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==================================================
+    /* 
        CURRENT YEAR
-       ================================================== */
+        */
 
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
     }
 
-    /* ==================================================
+    /* 
        REVEAL ANIMATIONS
-       ================================================== */
+        */
 
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -207,9 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==================================================
+    /* 
        INSTANT CURSOR-FOLLOWING AMBIENT LIGHT
-       ================================================== */
+        */
 
     const supportsFinePointer = window.matchMedia(
         "(hover: hover) and (pointer: fine)"
@@ -285,9 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==================================================
+    /* 
        LIQUID-GLASS BUTTON POINTER MOVEMENT
-       ================================================== */
+        */
 
     const liquidButtons = document.querySelectorAll(".button");
     const reduceMotion = window.matchMedia(
