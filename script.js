@@ -548,3 +548,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+const downloadCvButton = document.getElementById("downloadCv");
+
+if (downloadCvButton) {
+    downloadCvButton.addEventListener("click", function () {
+        const cvUrl = new URL(
+            "assets/Farodian-Freeks-CV.pdf",
+            window.location.href
+        );
+
+        // A new value is created on every click, preventing an old
+        // browser-cached PDF from being reused.
+        cvUrl.searchParams.set("v", Date.now().toString());
+
+        downloadCvButton.href = cvUrl.href;
+    });
+}
