@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The virtual CV of Farodian Freeks, a BSc Information Technology student and aspiring software developer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#e5eaf5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15101c" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="The virtual CV of Farodian Freeks, a BSc Information Technology student and aspiring AI software engineer.">
     <title>Farodian Freeks | Virtual CV</title>
     <link rel="icon" href="assets/Virtual CV name logo.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=mobile-polish-3">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="site-header">
         <nav class="nav container" aria-label="Main navigation">
             <a class="logo" href="#home" aria-label="Farodian Elohiam Freeks — go to the top">
@@ -22,13 +27,7 @@
                 </span>
             </a>
 
-            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks" aria-label="Portfolio sections">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#learning">Learning</a>
@@ -37,11 +36,19 @@
                 <a href="#contact">Contact</a>
             </div>
 
-            <button class="theme-button" id="themeButton" aria-label="Switch colour theme">☀</button>
+            <button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">☀</button>
+
+            <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </nav>
     </header>
 
-    <main>
+    <button class="nav-scrim" id="navScrim" type="button" aria-label="Close navigation" hidden></button>
+
+    <main id="main-content">
         <section class="hero container" id="home">
             <div class="hero-copy reveal">
                 <p class="eyebrow"><span class="status-dot"></span>BSc IT student in Potchefstroom</p>
@@ -52,7 +59,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a class="button primary" href="#projects">See my projects</a>
-                    <a class="button secondary" href="assets/Farodian Elohiam Freeks - CV.pdf?v=2" download="Farodian Elohiam Freeks - CV.pdf" aria-label="Download Farodian Elohiam Freeks CV as a PDF">Download my CV ↓</a>
+                    <a class="button secondary" href="assets/Farodian Elohiam Freeks - CV.pdf?v=20260724" download="Farodian Elohiam Freeks - CV.pdf" aria-label="Download Farodian Elohiam Freeks CV as a PDF">Download my CV ↓</a>
                 </div>
             </div>
 
@@ -68,7 +75,7 @@
     <span class="code-green">"problem solving"</span>,
     <span class="code-green">"building pet programs"</span>
   ],
-  currentGoal: <span class="code-green">"grow as a developer"</span>
+  currentGoal: <span class="code-green">"grow as an AI software engineer"</span>
 };</code></pre>
             </aside>
         </section>
@@ -135,8 +142,11 @@
                         <div class="skill-icon">DB</div>
                         <h3>Databases & tools</h3>
                         <div class="tags">
+                            <span>SQL Server</span>
                             <span>MySQL</span>
                             <span>SQLite</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
                             <span>Visual Studio</span>
                             <span>VS Code</span>
                             <span>IntelliJ IDEA</span>
@@ -259,48 +269,48 @@
                     <div class="project-number">01</div>
                     <div>
                         <p class="project-type">Python game</p>
-                        <h3>Snake Game</h3>
+                        <h3>Pixel Kingdom Snake</h3>
                         <p>
-                            A retro-style snake game made with Python and Turtle. It uses keyboard input,
-                            collision detection, scoring and a continuous game loop.
+                            An arcade-style game made with Python and Turtle, featuring keyboard controls,
+                            collision detection, scoring, persistent high scores and progressive speed.
                         </p>
                         <div class="tags">
                             <span>Python</span><span>Turtle</span><span>Game logic</span>
                         </div>
                     </div>
-                    <a class="project-link" href="https://github.com/FarodianFreeks/Snake-Game-Pixel-Kingdom-v2" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                    <a class="project-link" href="https://github.com/FarodianFreeks/Snake-Game-Pixel-Kingdom-v2" target="_blank" rel="noopener noreferrer" aria-label="View Pixel Kingdom Snake on GitHub">View on GitHub ↗</a>
                 </article>
 
                 <article class="project-card reveal">
                     <div class="project-number">02</div>
                     <div>
                         <p class="project-type">Python game</p>
-                        <h3>Ping Pong Game</h3>
+                        <h3>Modernized Ping Pong</h3>
                         <p>
-                            A two-player game that helped me practise object-oriented programming,
-                            real-time movement and ball collision mechanics.
+                            A two-player Python and Turtle game featuring object-oriented design, responsive
+                            controls, timer-based movement, collision mechanics, scoring, pause and restart.
                         </p>
                         <div class="tags">
                             <span>Python</span><span>OOP</span><span>Input handling</span>
                         </div>
                     </div>
-                    <a class="project-link" href="https://github.com/FarodianFreeks/Ping-Pong-Modernized-v1/tree/main" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                    <a class="project-link" href="https://github.com/FarodianFreeks/Ping-Pong-Modernized-v1" target="_blank" rel="noopener noreferrer" aria-label="View Modernized Ping Pong on GitHub">View on GitHub ↗</a>
                 </article>
 
                 <article class="project-card reveal">
                     <div class="project-number">03</div>
                     <div>
                         <p class="project-type">University group project</p>
-                        <h3>Course Management System</h3>
+                        <h3>PROSPERA Course &amp; Skills Management System</h3>
                         <p>
-                            A full-stack academic project completed with a team. I worked on backend
-                            logic, database connections and testing parts of the user interface.
+                            A university group project built with C#, Windows Forms and SQL Server. I contributed
+                            backend logic, database integration, validation, reporting and user-interface testing.
                         </p>
                         <div class="tags">
-                            <span>Team project</span><span>Database</span><span>Backend</span>
+                            <span>C#</span><span>Windows Forms</span><span>SQL Server</span>
                         </div>
                     </div>
-                    <a class="project-link" href="https://github.com/FarodianFreeks/PROSPERA-Course-Management-System" target="_blank" rel="noopener noreferrer" >View on GitHub ↗</a>
+                    <a class="project-link" href="https://github.com/FarodianFreeks/PROSPERA-Course-Management-System" target="_blank" rel="noopener noreferrer" aria-label="View PROSPERA Course and Skills Management System on GitHub">View on GitHub ↗</a>
                 </article>
 
                 <article class="project-card playful reveal">
@@ -316,7 +326,7 @@
                             <span>Practice</span><span>Automation</span><span>Learning</span>
                         </div>
                     </div>
-                    <a class="project-link disabled" href="#" aria-disabled="true">GitHub link soon</a>
+                    <span class="project-link disabled" aria-label="Ongoing collection of smaller projects">Ongoing collection</span>
                 </article>
             </div>
         </section>
@@ -348,8 +358,8 @@
                         <div class="timeline-content">
                             <h3>Keep building and improving</h3>
                             <p>
-                                My goal is to grow my project portfolio, strengthen my Python and software
-                                development skills, and gain practical industry experience.
+                                My goal is to grow my project portfolio, strengthen my Python, software development
+                                and AI engineering skills, and gain practical industry experience.
                             </p>
                         </div>
                     </article>
@@ -430,11 +440,11 @@
 
     <footer>
         <div class="container footer-content">
-            <p>© Farodian Freeks. All rights reserved. <span id="currentYear"></span>.</p>
+            <p>© <span id="currentYear"></span> Farodian Freeks. All rights reserved.</p>
             <a href="#home">Back to the top ↑</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=mobile-polish-3"></script>
 </body>
 </html>
