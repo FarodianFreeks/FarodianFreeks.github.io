@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* Copy Email Button */
+    /* copyEmailButton */
 
     if (copyEmailButton && copyMessage) {
         copyEmailButton.addEventListener("click", async () => {
@@ -341,8 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentYear.textContent = new Date().getFullYear();
     }
 
-    /* Animation reveals */
-
+    /* Animation Reveal */
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
@@ -369,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* Instant Cursor Light */
+    /* Instantly Moving Cursor Light */
 
     const supportsFinePointer = window.matchMedia(
         "(hover: hover) and (pointer: fine)"
@@ -447,7 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* Liquid Buttons */
+    /* liquidButtons */
 
     const liquidButtons = document.querySelectorAll(".button");
     const reduceMotion = window.matchMedia(

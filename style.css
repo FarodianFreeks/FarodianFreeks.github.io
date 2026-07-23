@@ -892,7 +892,14 @@ footer {
     }
 
     .hero h1 {
-        font-size: clamp(3rem, 13vw, 5.3rem);
+        font-size: clamp(3.05rem, 8.25vw, 4.55rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        text-wrap: balance;
+    }
+
+    .hero h1 span {
+        line-height: 1.04;
     }
 
     .code-card {
@@ -1608,10 +1615,7 @@ body.dark {
     }
 }
 
-/* ==================================================
-   SLOW LIGHT / DARK MODE LOOP TRANSITION
-   This changes only the theme-switch animation.
-   ================================================== */
+/* slower theme transition and two expanding circular loops */
 
 :root {
     --theme-loop-x: 50vw;
@@ -1845,10 +1849,10 @@ body.theme-loop-active::after {
     }
 }
 
-/* ==================================================
+/* 
    SUBTLE INSTANT CURSOR-FOLLOWING AMBIENT LIGHT
    The glow follows the pointer exactly with no delay.
-   ================================================== */
+    */
 
 .cursor-light-gradient {
     position: fixed;
@@ -1986,9 +1990,9 @@ footer {
     }
 }
 
-/* ==================================================
+/* 
    SMALL PERSONAL SECTION
-   ================================================== */
+    */
 
 .personal-section {
     padding-top: 90px;
@@ -2247,9 +2251,9 @@ body.dark .personal-item {
     }
 }
 
-/* ==================================================
+/* 
    AI-FOCUSED CURRENTLY LEARNING SECTION
-   ================================================== */
+    */
 
 .learning-section {
     position: relative;
@@ -2513,9 +2517,9 @@ body.dark .learning-status {
     }
 }
 
-/* ==================================================
+/* 
    RESPONSIVE NAVBAR LOGO LOCKUP
-   ================================================== */
+    */
 
 @media (max-width: 1040px) {
     .nav {
@@ -3040,17 +3044,22 @@ body.menu-open {
 
     .hero h1 {
         max-width: 100%;
-        margin-top: 17px;
-        font-size: clamp(2.85rem, 13.2vw, 4.45rem);
-        line-height: 0.96;
-        letter-spacing: -0.058em;
+        margin-top: 18px;
+        font-size: clamp(2.45rem, 10.2vw, 3.35rem);
+        line-height: 1.035;
+        letter-spacing: -0.04em;
         overflow-wrap: normal;
         word-break: normal;
+        text-wrap: balance;
     }
 
     .hero h1 span {
         display: block;
-        margin-top: 0.09em;
+        margin-top: 0.16em;
+        font-size: 0.91em;
+        line-height: 1.065;
+        letter-spacing: -0.032em;
+        text-wrap: balance;
         background: linear-gradient(115deg, var(--accent), var(--highlight), var(--accent));
         background-size: 180% 100%;
         -webkit-background-clip: text;
@@ -3292,7 +3301,16 @@ body.menu-open {
     }
 
     .hero h1 {
-        font-size: clamp(2.65rem, 13.7vw, 3.65rem);
+        font-size: clamp(2.2rem, 10.4vw, 2.85rem);
+        line-height: 1.045;
+        letter-spacing: -0.036em;
+    }
+
+    .hero h1 span {
+        margin-top: 0.18em;
+        font-size: 0.92em;
+        line-height: 1.075;
+        letter-spacing: -0.027em;
     }
 
     .hero-buttons,
@@ -3315,6 +3333,18 @@ body.menu-open {
 }
 
 @media (max-width: 335px) {
+    .hero h1 {
+        font-size: 2.12rem;
+        line-height: 1.055;
+        letter-spacing: -0.031em;
+    }
+
+    .hero h1 span {
+        font-size: 0.9em;
+        line-height: 1.085;
+        letter-spacing: -0.022em;
+    }
+
     .logo-first-name {
         display: none;
     }
