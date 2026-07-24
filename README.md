@@ -160,7 +160,7 @@ Changes pushed to the `main` branch are deployed through GitHub Pages.
 
 - **Virtual CV:** https://farodianfreeks.github.io/
 - **GitHub:** https://github.com/FarodianFreeks
-- **LinkedIn:** https://www.linkedin.com/in/farodian-elohiam-freeks-941346420/](https://www.linkedin.com/in/farodianfreeks/
+- **LinkedIn:** https://www.linkedin.com/in/farodianfreeks/
 
 ## Project Repositories
 
